@@ -1,0 +1,59 @@
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Team Members{% endblock %}
+{% block body %}
+<div class="content-section">
+  <div class="outer">
+	<div class="middle">
+	  <div class="inner">
+		<br/>
+		{{ utils.flashed_messages() }}
+		<br/>
+		<h1 style="text-align:center;">Team Members</h1>
+		{% if members %}
+		  <hr class="intro-divider">
+		  <div class="center">
+			<table class="table table-striped table-bordered">
+			  <thead>
+				<tr>
+          <th width="15%"> Name </th>
+				  <th width="20%"> Project Title</th>
+				  <th width="20%"> Progress </th>
+				  <th width="20%"> Task </th>
+				  <th width="15%"> Email </th>
+				</tr>
+			  </thead>
+			  <tbody>
+			  {% for member in members %}
+          <tr>
+					  <td> {{ member[1]}} </td>
+					  <td>
+						  {{ member[2] }}
+					  </td>
+					  <td>
+						  {{ member[3] }}
+              <a href="{{ url_for('admin.edit_work', id=member.id, pro_id = member.pro_id) }}">
+                Edit
+              </a>
+					  </td>
+					  <td>
+						  {{ member[4] }}
+              <a href="{{ url_for('admin.edit_work', id=member.id, pro_id = member.pro_id) }}">
+                Edit
+              </a>
+					  </td>
+					  <td>
+						  {{ member[5] }}
+					  </td>
+          </tr>
+			  {% endfor %}
+			  </tbody>
+			</table>
+		  </div>
+		{% endif %}
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
+{% endblock %}
