@@ -30,14 +30,14 @@ You will need to create a MySQL user your terminal, as well as a MySQL database.
 ```
 $ mysql -u root
 
-mysql> CREATE USER 'dt_admin'@'localhost' IDENTIFIED BY 'dt2016';
+mysql> CREATE USER 'gt_admin'@'localhost' IDENTIFIED BY 'gt2017';
 
-mysql> CREATE DATABASE dreamteam_db;
+mysql> CREATE DATABASE gtrack_db;
 
-mysql> GRANT ALL PRIVILEGES ON dreamteam_db . * TO 'dt_admin'@'localhost';
+mysql> GRANT ALL PRIVILEGES ON dreamteam_db . * TO 'gt_admin'@'localhost';
 ```
 
-Note that `dt_admin` is the database user and `dt2016` is the user password. After creating the database, run migrations as follows:
+Note that `gt_admin` is the database user and `gt2017` is the user password. After creating the database, run migrations as follows:
 
 * `flask db migrate`
 * `flask db upgrade`
@@ -46,7 +46,7 @@ Note that `dt_admin` is the database user and `dt2016` is the user password. Aft
 Create a directory, `instance`, and in it create a `config.py` file. This file should contain configuration variables that should not be publicly shared, such as passwords and secret keys. The app requires you to have the following configuration
 variables:
 * SECRET_KEY
-* SQLALCHEMY_DATABASE_URI (`'mysql://dt_admin:dt2016@localhost/dreamteam_db'`)
+* SQLALCHEMY_DATABASE_URI (`'mysql://dt_admin:gt2017@localhost/gtrack_db'`)
 
 ## Launching the Program
 Set the FLASK_APP and FLASK_CONFIG variables as follows:
@@ -62,9 +62,9 @@ First, create a test database and grant all privileges on your test database to 
 ```
 $ mysql -u root
 
-mysql> CREATE DATABASE dreamteam_test;
+mysql> CREATE DATABASE gtrack_test;
 
-mysql> GRANT ALL PRIVILEGES ON dreamteam_test . * TO 'dt_admin'@'localhost';
+mysql> GRANT ALL PRIVILEGES ON gtrack_test . * TO 'gt_admin'@'localhost';
 ```
 
 To test, run the following command: `python tests.py`
