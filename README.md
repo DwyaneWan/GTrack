@@ -3,6 +3,8 @@ GTrack is a website application that stores the details and general information 
 
 GTrack is implemented following a [tutorial](https://scotch.io/tutorials/build-a-crud-web-app-with-python-and-flask-part-one) on Scotch.io by Mbithe Nzomo.
 
+![image](GTrack/WX20180122-115306.png)
+
 ## Installation and Set Up
 Prerequisites:
 * [Python 2](https://www.python.org/download/releases/2.7.2/)
